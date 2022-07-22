@@ -22,7 +22,7 @@
   --bs-light: #e9ecef;
   --bs-dark: #344767;
   --bs-white: #fff;
-  --bs-font-sans-serif: Open Sans;
+  --bs-font-sans-serif: Nunito;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
@@ -18617,7 +18617,7 @@ fieldset:disabled .btn {
 /*!
 
 =========================================================
-* Soft UI Dashboard - v1.0.3
+* Trivia Quiz - v1.0.3
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
@@ -19381,7 +19381,7 @@ fieldset:disabled .btn {
 }
 
 .card .card-body {
-  font-family: "Open Sans";
+  font-family: "Nunito";
   padding: 1.5rem;
 }
 
@@ -23194,7 +23194,7 @@ p {
 }
 
 .text-sans-serif {
-  font-family: "Open Sans" !important;
+  font-family: "Nunito" !important;
 }
 
 .text-monospace {

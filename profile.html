@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo.png">
+  <link rel="icon" type="image/png" href="../assets/img/logo.png">
   <title>
     Trivia Game
   </title>
@@ -18,7 +18,7 @@
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="../assets/css/styles.css" rel="stylesheet" />
+  <link href="../assets/css/styles.css" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
@@ -26,7 +26,7 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="index.html">
-        <img src="../assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
+        <img src="../assets/img/logo.png" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold">Trivia Game</span>
       </a>
     </div>
@@ -117,137 +117,154 @@
         </li>
       </ul>
     </div>
-    <div class="sidenav-footer mx-3 ">
-      <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-        <div class="full-background" style="background-image: url('../assets/img/curved-images/white-curved.jpeg')"></div>
-        <div class="card-body text-start p-3 w-100">
-          <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
-            <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
-          </div>
-          <div class="docs-info">
-            <h6 class="text-white up mb-0">Need help?</h6>
-            <p class="text-xs font-weight-bold">Please check our docs</p>
-            <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Documentation</a>
-          </div>
-        </div>
-      </div>
-      <a class="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
-    </div>
   </aside>
-  <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
-    <div class="container-fluid">
-      <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
-        <span class="mask bg-gradient-primary opacity-6"></span>
+  <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+      <div class="container-fluid py-1 px-3">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">Trivia Quiz Dashboard</h6>
+        </nav>
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+            
+          </div>
+          <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-sign-out"></i>
+                <span class="d-sm-inline d-none">Sign Out</span>
+              </a>
+            </li>
+            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                <div class="sidenav-toggler-inner">
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                  <i class="sidenav-toggler-line"></i>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
-        <div class="row gx-4">
-          <div class="col-auto">
-            <div class="avatar avatar-xl position-relative">
-              <img src="../assets/img/bruce-mars.jpg" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+      <div class="container-fluid">
+        <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
+          <span class="mask bg-gradient-primary opacity-6"></span>
+        </div>
+        <div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
+          <div class="row gx-4">
+            <div class="col-auto">
+              <div class="avatar avatar-xl position-relative">
+                <img src="../assets/img/bruce-mars.jpg" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+              </div>
             </div>
-          </div>
-          <div class="col-auto my-auto">
-            <div class="h-100">
-              <h5 class="mb-1">
-                Subhang Verma
-              </h5>
-              <p class="mb-0 font-weight-bold text-sm">
-                Co-Founder, Code Edge Technologies
-              </p>
+            <div class="col-auto my-auto">
+              <div class="h-100">
+                <h5 class="mb-1">
+                  Subhang Verma
+                </h5>
+                <p class="mb-0 font-weight-bold text-sm">
+                  Co-Founder, Code Edge Technologies
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
-            <div class="nav-wrapper position-relative end-0">
-              <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
-                <li class="nav-item"></li>
-                <li class="nav-item">
-                  <a class="nav-link mb-0 px-0 py-1 active " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
-                    <svg lass="text-dark" width="16px" height="16px" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M13.3163 40.983L35 19.2993L24.7007 9L3.017 30.6837C2.71848 30.9826 2.50643 31.3567 2.40333 31.7663L0 44L12.2313 41.5967C12.642 41.494 13.0177 41.2817 13.3163 40.983ZM42 12.2993C42.8749 11.4242 43.3663 10.2374 43.3663 9C43.3663 7.76257 42.8749 6.5758 42 5.70067L38.2993 2C37.4242 1.12514 36.2374 0.633667 35 0.633667C33.7626 0.633667 32.5758 1.12514 31.7007 2L28 5.70067L38.2993 16L42 12.2993Z" fill="black"/>
-                    </svg>
-                    <span class="ms-1">Edit Profile</span>
-                  </a>
-                </li>
-              </ul>
+            <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
+              <div class="nav-wrapper position-relative end-0">
+                <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
+                  <li class="nav-item"></li>
+                  <li class="nav-item">
+                    <a class="nav-link mb-0 px-0 py-1 active " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
+                      <svg lass="text-dark" width="16px" height="16px" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.3163 40.983L35 19.2993L24.7007 9L3.017 30.6837C2.71848 30.9826 2.50643 31.3567 2.40333 31.7663L0 44L12.2313 41.5967C12.642 41.494 13.0177 41.2817 13.3163 40.983ZM42 12.2993C42.8749 11.4242 43.3663 10.2374 43.3663 9C43.3663 7.76257 42.8749 6.5758 42 5.70067L38.2993 2C37.4242 1.12514 36.2374 0.633667 35 0.633667C33.7626 0.633667 32.5758 1.12514 31.7007 2L28 5.70067L38.2993 16L42 12.2993Z" fill="black"/>
+                      </svg>
+                      <span class="ms-1">Edit Profile</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-12 mt-4">
-          <div class="card mb-4">
-            <div class="card-header pb-0 p-3">
-              <h4 class="my-3">My Quizzes</h4>
-            </div>
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                  <div class="card card-blog card-plain">
-                    <div class="position-relative">
-                      <a class="d-block shadow-xl border-radius-xl">
-                        <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                      </a>
-                    </div>
-                    <div class="card-body px-1 pb-0">
-                      <p class="text-gradient text-dark mb-2 text-sm">11 May, 2022</p>
-                      <a href="javascript:;">
-                        <h5>
-                          Knowledge test
-                        </h5>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                  <div class="card card-blog card-plain">
-                    <div class="position-relative">
-                      <a class="d-block shadow-xl border-radius-xl">
-                        <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
-                      </a>
-                    </div>
-                    <div class="card-body px-1 pb-0">
-                      <p class="text-gradient text-dark mb-2 text-sm">12 June, 2022</p>
-                      <a href="javascript:;">
-                        <h5>
-                          Scandinavian
-                        </h5>
-                      </a>
+      <div class="container-fluid py-4">
+        <div class="row">
+          <div class="col-12 mt-4">
+            <div class="card mb-4">
+              <div class="card-header pb-0 p-3">
+                <h4 class="my-3">My Quizzes</h4>
+              </div>
+              <div class="card-body p-3">
+                <div class="row">
+                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                    <div class="card card-blog card-plain">
+                      <div class="position-relative">
+                        <a class="d-block shadow-xl border-radius-xl">
+                          <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                        </a>
+                      </div>
+                      <div class="card-body px-1 pb-0">
+                        <p class="text-gradient text-dark mb-2 text-sm">11 May, 2022</p>
+                        <a href="javascript:;">
+                          <h5>
+                            Knowledge test
+                          </h5>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                  <div class="card card-blog card-plain">
-                    <div class="position-relative">
-                      <a class="d-block shadow-xl border-radius-xl">
-                        <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                      </a>
-                    </div>
-                    <div class="card-body px-1 pb-0">
-                      <p class="text-gradient text-dark mb-2 text-sm">13 July, 2022</p>
-                      <a href="javascript:;">
-                        <h5>
-                          Movie Quiz
-                        </h5>
-                      </a>
+                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                    <div class="card card-blog card-plain">
+                      <div class="position-relative">
+                        <a class="d-block shadow-xl border-radius-xl">
+                          <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
+                        </a>
+                      </div>
+                      <div class="card-body px-1 pb-0">
+                        <p class="text-gradient text-dark mb-2 text-sm">12 June, 2022</p>
+                        <a href="javascript:;">
+                          <h5>
+                            Scandinavian
+                          </h5>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                  <div class="card card-blog card-plain">
-                    <div class="position-relative">
-                      <a class="d-block shadow-xl border-radius-xl">
-                        <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                      </a>
+                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                    <div class="card card-blog card-plain">
+                      <div class="position-relative">
+                        <a class="d-block shadow-xl border-radius-xl">
+                          <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                        </a>
+                      </div>
+                      <div class="card-body px-1 pb-0">
+                        <p class="text-gradient text-dark mb-2 text-sm">13 July, 2022</p>
+                        <a href="javascript:;">
+                          <h5>
+                            Movie Quiz
+                          </h5>
+                        </a>
+                      </div>
                     </div>
-                    <div class="card-body px-1 pb-0">
-                      <p class="text-gradient text-dark mb-2 text-sm">13 July, 2022</p>
-                      <a href="javascript:;">
-                        <h5>
-                          Movie Quiz
-                        </h5>
-                      </a>
+                  </div>
+                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                    <div class="card card-blog card-plain">
+                      <div class="position-relative">
+                        <a class="d-block shadow-xl border-radius-xl">
+                          <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                        </a>
+                      </div>
+                      <div class="card-body px-1 pb-0">
+                        <p class="text-gradient text-dark mb-2 text-sm">13 July, 2022</p>
+                        <a href="javascript:;">
+                          <h5>
+                            Movie Quiz
+                          </h5>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -257,7 +274,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
+
+  
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
