@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo.png">
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
   <title>
-    My Profile - Trivia Game
+    My Matches - Trivia Quiz
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -21,9 +22,8 @@
   <link href="../assets/css/styles.css" rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show bg-gray-100">
+<body class="g-sidenav-show  bg-gray-100">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
-    
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="index.html">
@@ -55,7 +55,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="matches.html">
+          <a class="nav-link active" href="matches.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -75,7 +75,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pills.html">
+          <a class="nav-link  " href="pills.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>spaceship</title>
@@ -97,7 +97,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="profile.html">
+          <a class="nav-link  " href="profile.html">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
@@ -154,123 +154,142 @@
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
-      <div class="container-fluid">
-        <div class="page-header min-height-300 border-radius-xl mt-4" style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
-          <span class="mask bg-gradient-primary opacity-6"></span>
-        </div>
-        <div class="card card-body blur shadow-blur mx-4 mt-n6 overflow-hidden">
-          <div class="row gx-4">
-            <div class="col-auto">
-              <div class="avatar avatar-xl position-relative">
-                <img src="../assets/img/bruce-mars.jpg" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
-              </div>
-            </div>
-            <div class="col-auto my-auto">
-              <div class="h-100">
-                <h5 class="mb-1">
-                  Subhang Verma
-                </h5>
-                <p class="mb-0 font-weight-bold text-sm">
-                  Co-Founder, Code Edge Technologies
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
-              <div class="nav-wrapper position-relative end-0">
-                <ul class="nav nav-pills nav-fill p-1 bg-transparent" role="tablist">
-                  <li class="nav-item"></li>
-                  <li class="nav-item">
-                    <a class="nav-link mb-0 px-0 py-1 active " data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
-                      <svg lass="text-dark" width="16px" height="16px" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13.3163 40.983L35 19.2993L24.7007 9L3.017 30.6837C2.71848 30.9826 2.50643 31.3567 2.40333 31.7663L0 44L12.2313 41.5967C12.642 41.494 13.0177 41.2817 13.3163 40.983ZM42 12.2993C42.8749 11.4242 43.3663 10.2374 43.3663 9C43.3663 7.76257 42.8749 6.5758 42 5.70067L38.2993 2C37.4242 1.12514 36.2374 0.633667 35 0.633667C33.7626 0.633667 32.5758 1.12514 31.7007 2L28 5.70067L38.2993 16L42 12.2993Z" fill="black"/>
-                      </svg>
-                      <span class="ms-1">Edit Profile</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid py-4">
-        <div class="row">
-          <div class="col-12 mt-4">
-            <div class="card mb-4">
-              <div class="card-header pb-0 p-3">
-                <h4 class="my-3">My Quizzes</h4>
-              </div>
-              <div class="card-body p-3">
-                <div class="row">
-                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                    <div class="card card-blog card-plain">
-                      <div class="position-relative">
-                        <a class="d-block shadow-xl border-radius-xl">
-                          <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                        </a>
-                      </div>
-                      <div class="card-body px-1 pb-0">
-                        <p class="text-gradient text-dark mb-2 text-sm">11 May, 2022</p>
-                        <a href="javascript:;">
-                          <h5>
-                            Knowledge test
-                          </h5>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                    <div class="card card-blog card-plain">
-                      <div class="position-relative">
-                        <a class="d-block shadow-xl border-radius-xl">
-                          <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
-                        </a>
-                      </div>
-                      <div class="card-body px-1 pb-0">
-                        <p class="text-gradient text-dark mb-2 text-sm">12 June, 2022</p>
-                        <a href="javascript:;">
-                          <h5>
-                            Scandinavian
-                          </h5>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                    <div class="card card-blog card-plain">
-                      <div class="position-relative">
-                        <a class="d-block shadow-xl border-radius-xl">
-                          <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                        </a>
-                      </div>
-                      <div class="card-body px-1 pb-0">
-                        <p class="text-gradient text-dark mb-2 text-sm">13 July, 2022</p>
-                        <a href="javascript:;">
-                          <h5>
-                            Movie Quiz
-                          </h5>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
-                    <div class="card card-blog card-plain">
-                      <div class="position-relative">
-                        <a class="d-block shadow-xl border-radius-xl">
-                          <img src="../assets/img/home-decor-1.jpg" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
-                        </a>
-                      </div>
-                      <div class="card-body px-1 pb-0">
-                        <p class="text-gradient text-dark mb-2 text-sm">13 July, 2022</p>
-                        <a href="javascript:;">
-                          <h5>
-                            Movie Quiz
-                          </h5>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+      <div class="row my-4">
+        <div class="col-lg-12 col-md-12 mb-md-0 mb-4">
+          <div class="card">
+            <div class="card-header pb-0">
+              <div class="row">
+                <div class="col-lg-6 col-7">
+                  <h6>My Matches</h6>
+                  <p class="text-sm mb-0">
+                    <i class="fa fa-check text-info" aria-hidden="true"></i>
+                    <span class="font-weight-bold ms-1">6 matches played</span>
+                  </p>
                 </div>
+                
+              </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+              <div class="table-responsive">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Match Name</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Players</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Total Prize Pool</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm me-3" alt="xd">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Soft UI XD Version</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        45 members
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> $14,000 </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="atlassian">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Add Progress Track</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        223 Members
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> $3,000 </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Fix Platform Errors</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        59 Members
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> Not set </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm me-3" alt="spotify">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        72 Members
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> $20,500 </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm me-3" alt="jira">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Add the New Pricing Page</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        67 Members
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> $500 </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-invision.svg" class="avatar avatar-sm me-3" alt="invision">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Redesign New Online Shop</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        156 Members
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> $2,000 </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -278,8 +297,7 @@
       </div>
     </div>
   </main>
-
-  
+  <!-- Document ends here -->
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>

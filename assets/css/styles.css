@@ -49,6 +49,7 @@ body {
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow-x: hidden;
 }
 
 hr {
@@ -20102,7 +20103,7 @@ label,
 }
 
 .bg-gradient-dark {
-  background-image: linear-gradient(310deg, #141727 0%, #3A416F 100%);
+  background-image: linear-gradient(310deg, #454545 0%, #000 100%);
 }
 
 .bg-gradient-faded-primary {
