@@ -5,8 +5,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/logo.png">
-  <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/logo.png">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
   <title>
     Trivia Quiz
   </title>
@@ -15,13 +15,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link href="../assets/css/styles.css" rel="stylesheet" />
+  <link href="assets/css/styles.css" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -30,24 +30,16 @@
     
     <div class="container-fluid py-4">
         <h3 class="my-3 mx-3">Match Name</h3>
-        <div class="row my-3 d-flex ">
+        <div class="my-3 d-flex justify-content-between">
             <div class="question">
-                <p>Question <span class="count">12 </span>of <span class="count">15</span></p>
+                <p>Question <span class="count" id="serial">01 </span>of <span class="count" id="total">15</span></p>
             </div>
-            <!-- <div class="timer">
-                <div class="show-container">
-                    <div class="progress" id="progressBar">
-                      <div class="progress-number" aria-valuenow="0" style="left: 0;"></div>
-                      <div class="rounded">
-                        <div class="progress-bar" style="width: 0;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="button-container">
-                      <a href="#" id="loadBtn" class="button">Load stuff</a>
-                    </div>
+            <div class="timer">
+                <p>Time Left : <span id="timer"></span></p>
+                <div id="progress-bar">
+                    <div id="progress-bar-inner"></div>
                 </div>
-            </div> -->
+            </div>
         </div>
         <div class="row mt-4">
             <div class="col-lg-12 col-md-12 com-sm-12 mb-lg-0 mb-4">
@@ -57,46 +49,121 @@
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col-lg-12 col-md-12 com-sm-12 mb-lg-0 mb-4">
-                
+        <div class="row mt-4 px-3">
+            <div class="col-lg-6 col-md-6 com-sm-12 mb-lg-0 mb-4">
+                <button onclick="pauseTimerAndProgressbar()" class="btn btn-primary text-white game-actions" id="pause-btn">Pause</button>
+                <button onclick="resumeTimerAndProgressbar()" class="btn btn-warning text-dark text-bold game-actions" id="resume-btn" disabled>Resume</button>
             </div>
         </div>
     </div>
   </main>
   <!-- Document ends here -->
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+  <script src="assets/js/core/popper.min.js"></script>
+  <script src="assets/js/core/bootstrap.min.js"></script>
+  <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script src="assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
 
   <script>
-    $(document).ready(function(){
-        var timer=0;
-        var percentageWidth = $('#progressBar').outerWidth()/100;
-        function timerRun(){
-            $('#progressBar .progress-bar').css("width", timer + "%").attr("aria-valuenow", timer);
-            
-            $('#progressBar .progress-number').css("-webkit-transform", "translateX(" + percentageWidth*timer + "px)").attr("aria-valuenow", timer);
-            
-            if(timer >= 100){  
-                $('#progressBar .progress-bar').css("width","100%");
-                $('#loadBtn').html("Done");
-                return;
-            }
-            timer++;
-            setTimeout(function(){timerRun()},200);
-        }
+
+    $( document ).ready(function() {
+        startTimerAndProgressbar();
+    });
+
+    var timer = null;
+    var timePassed;
+    var TIME_LIMIT;
+    var timeLeft;
+
+
+    function startTimerAndProgressbar() {
+        timePassed = 0;
+        TIME_LIMIT = 15;
+        timeLeft = TIME_LIMIT;
         
-        $('#loadBtn').click(function(e){
-            e.preventDefault();
-            $(this).html("loading");
-            timerRun();
-        });
-    }); 
+        startTimer();
+        initializeProgressBar()
+        startProgressBar()
+    }
+
+    function pauseTimerAndProgressbar() {
+        clearInterval(timer);
+        pauseProgressBar();
+        id("pause-btn").disabled = true;
+        id("resume-btn").disabled = false;
+    }
+
+    function resumeTimerAndProgressbar() {
+        startTimer();
+        resumeProgressBar();
+        id("pause-btn").disabled = false;
+        id("resume-btn").disabled = true;
+    }
+
+
+    /* HELPER FUNCTION */
+    function id(id) {
+        return document.getElementById(id);
+    }
+
+
+    /* PROGRESS BAR */
+    function initializeProgressBar() {
+        resetProgressBar();
+        id("progress-bar").style.visibility = "visible";
+        id("progress-bar-inner").style.animationDuration = TIME_LIMIT + "s";
+        id("progress-bar-inner").style.animationPlayState = "paused";
+    }
+
+    function startProgressBar() {
+        id("progress-bar-inner").style.animationPlayState = 'running';
+    }
+
+    function pauseProgressBar() {
+        id("progress-bar-inner").style.animationPlayState = 'paused';
+    }
+
+    function resumeProgressBar() {
+        id("progress-bar-inner").style.animationPlayState = 'running';
+    }
+
+    function initializeProgressBar() {
+        resetProgressBar();
+        id("progress-bar").style.visibility = "visible";
+        id("progress-bar-inner").style.animationDuration = TIME_LIMIT + "s";
+        id("progress-bar-inner").style.animationPlayState = "paused";
+    }
+
+    function resetProgressBar() {
+        var element = id('progress-bar-inner');
+        element.style.animation = 'none';
+        element.offsetHeight; /* trigger a DOM reflow */
+        element.style.animation = null;
+    }
+
+
+    /* TIMER */
+    function startTimer() {
+        id("timer").textContent = formatTime(timeLeft);
+        timer = setInterval(function() {
+            timePassed = timePassed += 1;
+            timeLeft = TIME_LIMIT - timePassed;
+            id("timer").textContent = formatTime(timeLeft);
+            if (timeLeft == 0) { clearTimeout(timer); }
+        }, 1000);
+    }
+
+    function formatTime(time) {
+        var m = Math.floor(time / 60);
+        var s = time % 60;
+        m = (m < 10) ? ("0" + m) : m;
+        s = (s < 10) ? ("0" + s) : s;
+        return `${m}:${s}`;
+    }
+
+    
   </script>
 
 </body>
