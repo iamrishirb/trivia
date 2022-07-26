@@ -50,24 +50,42 @@
         </div>
 
         <div class="row" id="options">
-            <div class="answer-card" style="background: url(/assets/img/jupiter.png); background-size: 100% 100%; background-repat: no-repeat;"></div>
-            <div class="answer-card" style="background: url(/assets/img/nebula.png); background-size: 100% 100%; background-repat: no-repeat;"></div>
-            <div class="answer-card" style="background: url(/assets/img/earth.png); background-size: 100% 100%; background-repat: no-repeat;"></div>
-            <div class="answer-card" style="background: url(/assets/img/galaxy.png); background-size: 100% 100%; background-repat: no-repeat;"></div>
+            <div class="answer-card" style="background: url(/assets/img/jupiter.png); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
+            <div class="answer-card" style="background: url(/assets/img/nebula.png); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
+            <div class="answer-card" style="background: url(/assets/img/earth.png); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
+            <div class="answer-card" style="background: url(/assets/img/galaxy.png); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
         </div>
-
-        <div class="row mt-4 px-3 justify-content-between">
-            <div class="col-lg-6 colmd-6 col-sm-12">
-                <button class="btn btn-success game-actions">Skip Question</button>
-                <button class="btn btn-primary game-actions">Buy Pill</button>
-            </div>
-            <div class="col-lg-6 col-md-6 com-sm-12 mb-lg-0 mb-4 d-flex justify-content-end">
-                <button onclick="pauseTimerAndProgressbar()" class="btn btn-primary text-white game-actions" id="pause-btn">Pause</button>
-                <button onclick="resumeTimerAndProgressbar()" class="btn btn-warning text-dark text-bold game-actions" id="resume-btn" disabled>Resume</button>
+        <div class="d-flex justify-content-center mt-2">
+            <button class="btn text-white gradient-cta text-spacing mx-4 mt-3" onclick="changeQuestion()">Submit</button>
+        </div>
+    </div>
+    <div class="row mt-4 p-5" style="background: #dedede;">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <button class="btn btn-success game-actions">Skip Question</button>
+                    <button class="btn btn-primary game-actions" id="buyPillButton">Buy Pill</button>
+                </div>
+                <div class="col-lg-6 col-md-6 com-sm-12 d-flex justify-content-end">
+                    <button onclick="pauseTimerAndProgressbar()" class="btn btn-primary text-white game-actions" id="pause-btn">Pause</button>
+                    <button onclick="resumeTimerAndProgressbar()" class="btn btn-warning text-dark text-bold game-actions" id="resume-btn" disabled>Resume</button>
+                </div>
             </div>
         </div>
     </div>
   </main>
+
+    <!-- Buy Pill Modal -->
+    <div id="buyPill" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 class="my-3 mx-3">Buy Extra Time Pill</h3>
+            <p class="my-3 mx-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, quam ullam dolorum possimus impedit, nemo, sint molestiae placeat atque temporibus error voluptas quibusdam incidunt perferendis deserunt quia magnam accusamus expedita.</p>
+            <button class="btn btn-primary gradient-cta m-3">Buy Now for $ 0.50 USD</button>
+        </div>
+    </div>
+
   <!-- Document ends here -->
   <!--   Core JS Files   -->
   <script src="assets/js/core/popper.min.js"></script>
@@ -76,107 +94,7 @@
   <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="assets/js/jquery-3.6.0.min.js"></script>
   <script src="assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
-
-  <script>
-
-    $( document ).ready(function() {
-        startTimerAndProgressbar();
-    });
-
-    var timer = null;
-    var timePassed;
-    var TIME_LIMIT;
-    var timeLeft;
-
-
-    function startTimerAndProgressbar() {
-        timePassed = 0;
-        TIME_LIMIT = 15;
-        timeLeft = TIME_LIMIT;
-        
-        startTimer();
-        initializeProgressBar()
-        startProgressBar()
-    }
-
-    function pauseTimerAndProgressbar() {
-        clearInterval(timer);
-        pauseProgressBar();
-        id("pause-btn").disabled = true;
-        id("resume-btn").disabled = false;
-    }
-
-    function resumeTimerAndProgressbar() {
-        startTimer();
-        resumeProgressBar();
-        id("pause-btn").disabled = false;
-        id("resume-btn").disabled = true;
-    }
-
-
-    /* HELPER FUNCTION */
-    function id(id) {
-        return document.getElementById(id);
-    }
-
-
-    /* PROGRESS BAR */
-    function initializeProgressBar() {
-        resetProgressBar();
-        id("progress-bar").style.visibility = "visible";
-        id("progress-bar-inner").style.animationDuration = TIME_LIMIT + "s";
-        id("progress-bar-inner").style.animationPlayState = "paused";
-    }
-
-    function startProgressBar() {
-        id("progress-bar-inner").style.animationPlayState = 'running';
-    }
-
-    function pauseProgressBar() {
-        id("progress-bar-inner").style.animationPlayState = 'paused';
-    }
-
-    function resumeProgressBar() {
-        id("progress-bar-inner").style.animationPlayState = 'running';
-    }
-
-    function initializeProgressBar() {
-        resetProgressBar();
-        id("progress-bar").style.visibility = "visible";
-        id("progress-bar-inner").style.animationDuration = TIME_LIMIT + "s";
-        id("progress-bar-inner").style.animationPlayState = "paused";
-    }
-
-    function resetProgressBar() {
-        var element = id('progress-bar-inner');
-        element.style.animation = 'none';
-        element.offsetHeight; /* trigger a DOM reflow */
-        element.style.animation = null;
-    }
-
-
-    /* TIMER */
-    function startTimer() {
-        id("timer").textContent = formatTime(timeLeft);
-        timer = setInterval(function() {
-            timePassed = timePassed += 1;
-            timeLeft = TIME_LIMIT - timePassed;
-            id("timer").textContent = formatTime(timeLeft);
-            if (timeLeft == 0) { clearTimeout(timer); }
-        }, 1000);
-    }
-
-    function formatTime(time) {
-        var m = Math.floor(time / 60);
-        var s = time % 60;
-        m = (m < 10) ? ("0" + m) : m;
-        s = (s < 10) ? ("0" + s) : s;
-        return `${m}:${s}`;
-    }
-
-    
-  </script>
+  <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>
