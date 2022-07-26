@@ -44,13 +44,24 @@
         <div class="row mt-4">
             <div class="col-lg-12 col-md-12 com-sm-12 mb-lg-0 mb-4">
                 <div class="h-100 p-3">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui fuga id sit eos ullam commodi. Maiores, reiciendis esse? Provident ab perspiciatis quas eaque pariatur deleniti dolorem accusantium odio aliquam repellendus!</h4>
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui fuga id sit eos ullam commodi. Maiores, reiciendis esse? Provident ab perspiciatis quas eaque pariatur deleniti dolorem accusantium odio aliquam repellendus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat incidunt maiores exercitationem dolore, debitis iste rem aliquid in reprehenderit eos sunt perspiciatis doloribus id molestias, libero iure assumenda quidem aliquam.</h4>
                 </div>
             </div>
         </div>
 
-        <div class="row mt-4 px-3">
-            <div class="col-lg-6 col-md-6 com-sm-12 mb-lg-0 mb-4">
+        <div class="row" id="options">
+            <div class="answer-card" style="background: url(/assets/img/jupiter.png); background-size: 100% 100%; background-repat: no-repeat;"></div>
+            <div class="answer-card" style="background: url(/assets/img/nebula.png); background-size: 100% 100%; background-repat: no-repeat;"></div>
+            <div class="answer-card" style="background: url(/assets/img/earth.png); background-size: 100% 100%; background-repat: no-repeat;"></div>
+            <div class="answer-card" style="background: url(/assets/img/galaxy.png); background-size: 100% 100%; background-repat: no-repeat;"></div>
+        </div>
+
+        <div class="row mt-4 px-3 justify-content-between">
+            <div class="col-lg-6 colmd-6 col-sm-12">
+                <button class="btn btn-success game-actions">Skip Question</button>
+                <button class="btn btn-primary game-actions">Buy Pill</button>
+            </div>
+            <div class="col-lg-6 col-md-6 com-sm-12 mb-lg-0 mb-4 d-flex justify-content-end">
                 <button onclick="pauseTimerAndProgressbar()" class="btn btn-primary text-white game-actions" id="pause-btn">Pause</button>
                 <button onclick="resumeTimerAndProgressbar()" class="btn btn-warning text-dark text-bold game-actions" id="resume-btn" disabled>Resume</button>
             </div>
