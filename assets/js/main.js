@@ -10,7 +10,7 @@ var timeLeft;
 
 function startTimerAndProgressbar() {
     timePassed = 0;
-    TIME_LIMIT = 15;
+    TIME_LIMIT = 45;
     timeLeft = TIME_LIMIT;
     
     startTimer();

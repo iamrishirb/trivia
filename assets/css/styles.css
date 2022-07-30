@@ -25015,10 +25015,11 @@ pre[class*="language-"] {
   border: 8px solid #4caf60;
   filter: saturate(150%);
   position: relative;
+  z-index: -1;
 }
 
 .selected::after {
-  content: url(/assets/img/greencheck.png);
+  content: url('assets/img/greencheck.png');
   position: absolute;
   object-fit: contain;
   height: 48px;
