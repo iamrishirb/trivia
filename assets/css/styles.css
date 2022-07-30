@@ -25019,7 +25019,7 @@ pre[class*="language-"] {
 }
 
 .selected::after {
-  content: url('assets/img/greencheck.png');
+  content: url('../img/greencheck.png');
   position: absolute;
   object-fit: contain;
   height: 48px;
