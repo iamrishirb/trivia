@@ -26,54 +26,53 @@
 
 <body class="g-sidenav-show  bg-gray-100">
 
-  <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
-    
-    <div class="container-fluid py-4">
-        <h3 class="my-3 mx-3">Match Name</h3>
-        <div class="my-3 d-flex justify-content-between">
-            <div class="question">
-                <p>Question <span class="count" id="serial">01 </span>of <span class="count" id="total">15</span></p>
-            </div>
-            <div class="timer">
-                <p>Time Left : <span id="timer"></span></p>
-                <div id="progress-bar">
-                    <div id="progress-bar-inner"></div>
+    <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg "> 
+        <div class="container-fluid py-4">
+            <h3 class="my-3 mx-3">Match Name</h3>
+            <div class="my-3 d-flex justify-content-between">
+                <div class="question">
+                    <p>Question <span class="count" id="serial">01 </span>of <span class="count" id="total">15</span></p>
+                </div>
+                <div class="timer">
+                    <p>Time Left : <span id="timer"></span></p>
+                    <div id="progress-bar">
+                        <div id="progress-bar-inner"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-lg-12 col-md-12 com-sm-12 mb-lg-0 mb-4">
-                <div class="h-100 p-3">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui fuga id sit eos ullam commodi. Maiores, reiciendis esse? Provident ab perspiciatis quas eaque pariatur deleniti dolorem accusantium odio aliquam repellendus! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat incidunt maiores exercitationem dolore, debitis iste rem aliquid in reprehenderit eos sunt perspiciatis doloribus id molestias, libero iure assumenda quidem aliquam.</h4>
+            <div class="row mt-4">
+                <div class="col-lg-12 col-md-12 com-sm-12 mb-lg-0 mb-4">
+                    <div class="h-100 p-3">
+                        <h4>Which planet is farthest from the Sun ?</h4>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="row" id="options">
-            <div class="answer-card" style="background: url(https://c.tenor.com/wfnPSysDSHcAAAAd/planet-jupiter-moving-planet-jupiter.gif); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
-            <div class="answer-card" style="background: url(https://c.tenor.com/fIxO84SMp1kAAAAC/neptune-neptune101.gif); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
-            <div class="answer-card" style="background: url(https://c.tenor.com/9MSEaIQ711AAAAAd/rotating-planet-moving-planet.gif); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
-            <div class="answer-card" style="background: url('https://c.tenor.com/fBY-WRbqni4AAAAd/jupiter.gif'); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
+            <div class="row" id="options">
+                <div class="answer-card" style="background: url(https://c.tenor.com/wfnPSysDSHcAAAAd/planet-jupiter-moving-planet-jupiter.gif); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
+                <div class="answer-card" style="background: url(https://c.tenor.com/fIxO84SMp1kAAAAC/neptune-neptune101.gif); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
+                <div class="answer-card" style="background: url(https://c.tenor.com/9MSEaIQ711AAAAAd/rotating-planet-moving-planet.gif); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
+                <div class="answer-card" style="background: url('https://c.tenor.com/fBY-WRbqni4AAAAd/jupiter.gif'); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
+            </div>
+            <div class="d-flex justify-content-center mt-2">
+                <a class="btn text-white gradient-cta text-spacing mx-4 mt-3" onclick="changeQuestion()" href="result.html">Submit</a>
+            </div>
         </div>
-        <div class="d-flex justify-content-center mt-2">
-            <button class="btn text-white gradient-cta text-spacing mx-4 mt-3" onclick="changeQuestion()">Submit</button>
-        </div>
-    </div>
-    <div class="row mt-4 p-5" style="background: #dedede;">
-        <div class="container-fluid">
-            <div class="row justify-content-between">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <button class="btn btn-success game-actions">Skip Question</button>
-                    <button class="btn btn-primary game-actions" id="buyPillButton">Buy Pill</button>
-                </div>
-                <div class="col-lg-6 col-md-6 com-sm-12 d-flex justify-content-end">
-                    <button onclick="pauseTimerAndProgressbar()" class="btn btn-primary text-white game-actions" id="pause-btn">Pause</button>
-                    <button onclick="resumeTimerAndProgressbar()" class="btn btn-warning text-dark text-bold game-actions" id="resume-btn" disabled>Resume</button>
+        <div class="row mt-4 p-5" style="background: #dedede;">
+            <div class="container-fluid">
+                <div class="row justify-content-between">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <button class="btn btn-success game-actions">Skip Question</button>
+                        <button class="btn btn-primary game-actions" id="buyPillButton">Buy Pill</button>
+                    </div>
+                    <div class="col-lg-6 col-md-6 com-sm-12 d-flex justify-content-end">
+                        <button onclick="pauseTimerAndProgressbar()" class="btn btn-primary text-white game-actions" id="pause-btn">Pause</button>
+                        <button onclick="resumeTimerAndProgressbar()" class="btn btn-warning text-dark text-bold game-actions" id="resume-btn" disabled>Resume</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-  </main>
+    </main>
 
     <!-- Buy Pill Modal -->
     <div id="buyPill" class="modal">

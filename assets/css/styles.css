@@ -25089,4 +25089,52 @@ pre[class*="language-"] {
   background: linear-gradient(-310deg, #7928CA 0%, #FF0080 100%);
 }
 
+.bottom-section {
+  position: fixed;
+  bottom: 0;
+  left: calc((100% - 600px) / 2);
+}
+
+.scores-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 8rem;
+}
+
+.scores-flex .card {
+  padding: 2rem;
+  width: 280px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.card.card-small {
+  background: linear-gradient(310deg, rgba(121, 40, 202, 0.2) 0%, rgba(255, 207, 223, 0.2) 100%);
+}
+
+.card.card-large {
+  transform: scale(1.5);
+  background: linear-gradient(310deg, rgba(121, 40, 202, 0.2) 0%, rgba(255, 207, 223, 0.2) 100%);
+}
+
+.cardtext {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-weight: 500;
+  line-height: 1rem;
+  color: #7928ca;
+}
+.cardvalue {
+  font-size: 2.2rem;
+  line-height: 4rem;
+  margin-bottom: 0;
+  font-weight: 700;
+  color: #000;
+}
+.smalltext {
+  margin-bottom: 0;
+  color: #192232;
+}
 /*# sourceMappingURL=dashboard-free.css.map */
