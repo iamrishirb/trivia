@@ -25242,7 +25242,7 @@ pre[class*="language-"] {
     height: 60px;
     border-radius: 10px;
     box-shadow: -12px 12px 24px rgba(52, 71, 103, 0.4);
-    border: 2px solid #ad0a8749;
+    /* border: 2px solid #ad0a8749; */
   }
   .base-timer__label {
     height: 60px;
