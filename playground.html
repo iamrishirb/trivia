@@ -26,9 +26,10 @@
 
 <body class="g-sidenav-show  bg-gray-100">
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg "> 
+        
         <div class="container-fluid py-4">
-            <h3 class="my-3 mx-3">Match Name</h3>
-            <div class="my-3 d-flex justify-content-between">
+            <h3 class="my-1 mx-3">Match Name</h3>
+            <div class="d-flex justify-content-between">
                 <div class="question">
                     <p>Question <span class="count" id="serial">01 </span>of <span class="count" id="total">15</span></p>
                 </div>
@@ -53,15 +54,15 @@
                               </g>
                             </svg>
                             <h2 class="base-timer__label">
-                              <span id="hour"></span> : 
-                              <span id="minute"></span> : 
+                              <!-- <span id="hour"></span> :  -->
+                              <span id="minute"></span><span>&nbsp;:&nbsp;</span> 
                               <span id="seconds"></span>
                             </h2>
                           </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
+            <div class="row mt-3">
                 <div class="col-lg-12 col-md-12 com-sm-12 mb-lg-0 mb-4">
                     <div class="h-100 p-3">
                         <h4>Which planet is farthest from the Sun ?</h4>
@@ -79,20 +80,28 @@
                 <a class="btn text-white gradient-cta text-spacing mx-4 mt-3" onclick="changeQuestion()" href="result.html">Submit</a>
             </div>
         </div>
-        <div class="row mt-4 p-5" style="background: #dedede;">
+
+        <!-- pills -->
+        <div id="pills">
+            <img src="assets/img/time pill.png" alt="time pill">
+            <span class="badge-counter">3</span>
+        </div>
+
+        <div class="row mt-4 p-5">
             <div class="container-fluid">
                 <div class="row justify-content-between">
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <button class="btn btn-success game-actions">Skip Question</button>
                         <button class="btn btn-primary game-actions" id="buyPillButton">Buy Pill</button>
                     </div>
-                    <div class="col-lg-6 col-md-6 com-sm-12 d-flex justify-content-end">
+                    <!-- <div class="col-lg-6 col-md-6 com-sm-12 d-flex justify-content-end">
                         <button onclick="pauseTimerAndProgressbar()" class="btn btn-primary text-white game-actions" id="pause-btn">Pause</button>
                         <button onclick="resumeTimerAndProgressbar()" class="btn btn-warning text-dark text-bold game-actions" id="resume-btn" disabled>Resume</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
+
     </main>
 
     <!-- Buy Pill Modal -->
@@ -103,15 +112,6 @@
             <h3 class="my-3 mx-3">Buy Extra Time Pill</h3>
             <p class="my-3 mx-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, quam ullam dolorum possimus impedit, nemo, sint molestiae placeat atque temporibus error voluptas quibusdam incidunt perferendis deserunt quia magnam accusamus expedita.</p>
             <button class="btn btn-primary gradient-cta m-3">Buy Now for $ 0.50 USD</button>
-        </div>
-    </div>
-
-    <!-- pills -->
-    <div id="pills">
-        <div class="pill-cup">
-            <div class="pill"></div>
-            <div class="pill"></div>
-            <div class="pill"></div>
         </div>
     </div>
 

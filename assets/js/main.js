@@ -59,21 +59,21 @@ const COLOR_CODES = {
 // let remainingPathColor = COLOR_CODES.info.color;
 
 window.onload = () => {
-    let hour = 0;
-    let minute = 0;
-    let seconds = 0;
-    let totalSeconds = 0;
-  
-    let intervalId = null;
+  let hour = 0;
+  let minute = 0;
+  let seconds = 0;
+  let totalSeconds = 0;
+
+  let intervalId = null;
   
   intervalId = setInterval(startTimer, 1000);
     function startTimer() {
       ++totalSeconds;
-      hour = Math.floor(totalSeconds / 3600);
+      // hour = Math.floor(totalSeconds / 3600);
       minute = Math.floor((totalSeconds - hour * 3600) / 60);
       seconds = totalSeconds - (hour * 3600 + minute * 60);
   
-      document.getElementById("hour").innerHTML = hour;
+      // document.getElementById("hour").innerHTML = hour;
       document.getElementById("minute").innerHTML = minute;
       document.getElementById("seconds").innerHTML = seconds;
     }
@@ -85,7 +85,7 @@ window.onload = () => {
   
     function reset() {
       totalSeconds = 0;
-      document.getElementById("hour").innerHTML = '00';
+      // document.getElementById("hour").innerHTML = '00';
       document.getElementById("minute").innerHTML = '00';
       document.getElementById("seconds").innerHTML = '00';
     } 
