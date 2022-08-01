@@ -25,7 +25,6 @@
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
-
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg "> 
         <div class="container-fluid py-4">
             <h3 class="my-3 mx-3">Match Name</h3>
@@ -33,10 +32,32 @@
                 <div class="question">
                     <p>Question <span class="count" id="serial">01 </span>of <span class="count" id="total">15</span></p>
                 </div>
-                <div class="timer">
-                    <p>Time Left : <span id="timer"></span></p>
-                    <div id="progress-bar">
-                        <div id="progress-bar-inner"></div>
+                <!-- floating clock -->
+                <div class="clockwrapper">
+                    <div id="floating-clock">
+                        <div class="base-timer">
+                            <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                              <g class="base-timer__circle">
+                                <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                                <path
+                                  id="base-timer-path-remaining"
+                                  stroke-dasharray="283"
+                                  class="base-timer__path-remaining ${remainingPathColor}"
+                                  d="
+                                    M 50, 50
+                                    m -45, 0
+                                    a 45,45 0 1,0 90,0
+                                    a 45,45 0 1,0 -90,0
+                                  "
+                                ></path>
+                              </g>
+                            </svg>
+                            <h2 class="base-timer__label">
+                              <span id="hour"></span> : 
+                              <span id="minute"></span> : 
+                              <span id="seconds"></span>
+                            </h2>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -49,10 +70,10 @@
             </div>
 
             <div class="row" id="options">
-                <div class="answer-card" style="background: url(https://c.tenor.com/wfnPSysDSHcAAAAd/planet-jupiter-moving-planet-jupiter.gif); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
-                <div class="answer-card" style="background: url(https://c.tenor.com/fIxO84SMp1kAAAAC/neptune-neptune101.gif); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
-                <div class="answer-card" style="background: url(https://c.tenor.com/9MSEaIQ711AAAAAd/rotating-planet-moving-planet.gif); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
-                <div class="answer-card" style="background: url('https://c.tenor.com/fBY-WRbqni4AAAAd/jupiter.gif'); background-size: 100% 100%; background-repat: no-repeat;" onclick="selectBox()"></div>
+                <div class="answer-card" style="background: url(https://c.tenor.com/wfnPSysDSHcAAAAd/planet-jupiter-moving-planet-jupiter.gif); background-size: 100% 100%; background-repat: no-repeat;"></div>
+                <div class="answer-card" style="background: url(https://c.tenor.com/fIxO84SMp1kAAAAC/neptune-neptune101.gif); background-size: 100% 100%; background-repat: no-repeat;"></div>
+                <div class="answer-card" style="background: url(https://c.tenor.com/9MSEaIQ711AAAAAd/rotating-planet-moving-planet.gif); background-size: 100% 100%; background-repat: no-repeat;"></div>
+                <div class="answer-card" style="background: url('https://c.tenor.com/fBY-WRbqni4AAAAd/jupiter.gif'); background-size: 100% 100%; background-repat: no-repeat;"></div>
             </div>
             <div class="d-flex justify-content-center mt-2">
                 <a class="btn text-white gradient-cta text-spacing mx-4 mt-3" onclick="changeQuestion()" href="result.html">Submit</a>
@@ -82,6 +103,15 @@
             <h3 class="my-3 mx-3">Buy Extra Time Pill</h3>
             <p class="my-3 mx-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, quam ullam dolorum possimus impedit, nemo, sint molestiae placeat atque temporibus error voluptas quibusdam incidunt perferendis deserunt quia magnam accusamus expedita.</p>
             <button class="btn btn-primary gradient-cta m-3">Buy Now for $ 0.50 USD</button>
+        </div>
+    </div>
+
+    <!-- pills -->
+    <div id="pills">
+        <div class="pill-cup">
+            <div class="pill"></div>
+            <div class="pill"></div>
+            <div class="pill"></div>
         </div>
     </div>
 

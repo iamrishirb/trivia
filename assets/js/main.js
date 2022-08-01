@@ -1,97 +1,3 @@
-$( document ).ready(function() {
-    startTimerAndProgressbar();
-});
-
-var timer = null;
-var timePassed;
-var TIME_LIMIT;
-var timeLeft;
-
-
-function startTimerAndProgressbar() {
-    timePassed = 0;
-    TIME_LIMIT = 45;
-    timeLeft = TIME_LIMIT;
-    
-    startTimer();
-    initializeProgressBar()
-    startProgressBar()
-}
-
-function pauseTimerAndProgressbar() {
-    clearInterval(timer);
-    pauseProgressBar();
-    id("pause-btn").disabled = true;
-    id("resume-btn").disabled = false;
-}
-
-function resumeTimerAndProgressbar() {
-    startTimer();
-    resumeProgressBar();
-    id("pause-btn").disabled = false;
-    id("resume-btn").disabled = true;
-}
-
-
-/* HELPER FUNCTION */
-function id(id) {
-    return document.getElementById(id);
-}
-
-/* PROGRESS BAR */
-function initializeProgressBar() {
-    resetProgressBar();
-    id("progress-bar").style.visibility = "visible";
-    id("progress-bar-inner").style.animationDuration = TIME_LIMIT + "s";
-    id("progress-bar-inner").style.animationPlayState = "paused";
-}
-
-function startProgressBar() {
-    id("progress-bar-inner").style.animationPlayState = 'running';
-}
-
-function pauseProgressBar() {
-    id("progress-bar-inner").style.animationPlayState = 'paused';
-}
-
-function resumeProgressBar() {
-    id("progress-bar-inner").style.animationPlayState = 'running';
-}
-
-function initializeProgressBar() {
-    resetProgressBar();
-    id("progress-bar").style.visibility = "visible";
-    id("progress-bar-inner").style.animationDuration = TIME_LIMIT + "s";
-    id("progress-bar-inner").style.animationPlayState = "paused";
-}
-
-function resetProgressBar() {
-    var element = id('progress-bar-inner');
-    element.style.animation = 'none';
-    element.offsetHeight; /* trigger a DOM reflow */
-    element.style.animation = null;
-}
-
-
-/* TIMER */
-function startTimer() {
-    id("timer").textContent = formatTime(timeLeft);
-    timer = setInterval(function() {
-        timePassed = timePassed += 1;
-        timeLeft = TIME_LIMIT - timePassed;
-        id("timer").textContent = formatTime(timeLeft);
-        if (timeLeft == 0) { clearTimeout(timer); }
-    }, 1000);
-}
-
-function formatTime(time) {
-    var m = Math.floor(time / 60);
-    var s = time % 60;
-    m = (m < 10) ? ("0" + m) : m;
-    s = (s < 10) ? ("0" + s) : s;
-    return `${m}:${s}`;
-}
-
 //On clicking any option card
 $("#options").on('click', '.answer-card', function () {
     $("#options .answer-card.selected").removeClass("selected");
@@ -114,20 +20,73 @@ var close = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal
 buyPillButton.onclick = function() {
     buyPillModal.style.display = "block";
-    pauseTimerAndProgressbar();
 }
 
 // When the user clicks on <span> (x), close the modal
 close.onclick = function() {
     buyPillModal.style.display = "none";
-    resumeTimerAndProgressbar();
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == buyPillModal) {
     buyPillModal.style.display = "none";
-    resumeTimerAndProgressbar();
   }
 }
 
+//code for rounded timer
+const FULL_DASH_ARRAY = 283;
+const WARNING_THRESHOLD = 10;
+const ALERT_THRESHOLD = 5;
+
+const COLOR_CODES = {
+  info: {
+    color: "green"
+  },
+  warning: {
+    color: "orange",
+    threshold: WARNING_THRESHOLD
+  },
+  alert: {
+    color: "red",
+    threshold: ALERT_THRESHOLD
+  }
+};
+
+// const TIME_LIMIT = 20;
+   // let timeLeft = TIME_LIMIT;
+// let timerInterval = null;
+// let remainingPathColor = COLOR_CODES.info.color;
+
+window.onload = () => {
+    let hour = 0;
+    let minute = 0;
+    let seconds = 0;
+    let totalSeconds = 0;
+  
+    let intervalId = null;
+  
+  intervalId = setInterval(startTimer, 1000);
+    function startTimer() {
+      ++totalSeconds;
+      hour = Math.floor(totalSeconds / 3600);
+      minute = Math.floor((totalSeconds - hour * 3600) / 60);
+      seconds = totalSeconds - (hour * 3600 + minute * 60);
+  
+      document.getElementById("hour").innerHTML = hour;
+      document.getElementById("minute").innerHTML = minute;
+      document.getElementById("seconds").innerHTML = seconds;
+    }
+  
+    document.getElementById('Displplaytimetaken').addEventListener('click', () => {
+      document.getElementById("timetaken").innerHTML = minute + "minutes" + seconds + "seconds";
+      reset();
+    });
+  
+    function reset() {
+      totalSeconds = 0;
+      document.getElementById("hour").innerHTML = '00';
+      document.getElementById("minute").innerHTML = '00';
+      document.getElementById("seconds").innerHTML = '00';
+    } 
+}
