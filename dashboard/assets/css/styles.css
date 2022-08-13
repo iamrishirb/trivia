@@ -25001,14 +25001,19 @@ pre[class*="language-"] {
   flex-wrap: wrap;
   margin: 40px 0px;
 }
+
+.card-wrapper {
+  width: fit-content;
+  max-width: 320px;
+}
 .answer-card {
   height: 200px;
   width: 320px;
   border-radius: 20px;
   background: linear-gradient(45deg, #444, #000);
-  box-shadow: 8px 8px 20px #eeeeee;
   position: relative;
   z-index: 0;
+  margin-bottom: 20px;
 }
 
 .answer-card.selected {
@@ -25030,7 +25035,14 @@ pre[class*="language-"] {
 }
 
 .answer-card.disabled {
-  opacity: 0.6;
+  filter: grayscale(1);
+}
+
+.option-text {
+  font-size: 1.2rem;
+  color: #000;
+  font-weight: 700;
+  text-align: center;
 }
 
 .text-spacing {
