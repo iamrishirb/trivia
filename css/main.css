@@ -873,7 +873,14 @@ th {
   background: url(../img/home-banner-bg.png) no-repeat;
   background-size: cover;
   background-position: center center;
-  max-height: 1200px; }
+  max-height: 1200px; 
+}
+
+.home-banner-left {
+  margin-top: -8`0px;
+}
+
+
   @media (min-width: 1921px) {
     .home-banner-area .fullscreen {
       align-items: start !important;
@@ -3178,5 +3185,34 @@ h6 {
         -moz-transition: all 0.3s ease 0s;
         -o-transition: all 0.3s ease 0s;
         transition: all 0.3s ease 0s; }
+
+        .glowing-cta {
+          color: #fff;
+          font-size: 1.2rem;
+          text-align: center;
+          font-weight: 600;
+          display: block;
+          background: rgba(255, 255, 255, 0.4);
+          padding: 18px;
+          border-radius: 8px;
+          max-width: 300px;
+          background: linear-gradient(-45deg, #ee7752, #e73c7e, #d59a23, #ff0000, #e211f9, #af11ee, rgb(164, 99, 249), rgb(255, 0, 132));
+          background-size: 1000% 1000%;
+          animation: changeGradient 3s linear forwards infinite;
+          box-shadow: 10px 10px 20px #363a4b;
+        }
+
+        @keyframes changeGradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        
 
 /*# sourceMappingURL=main.css.map */
